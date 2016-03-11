@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Shoes extends CI_Controller {
+class Products extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('admin/Shoes.php');
+        $this->load->view('admin/products_list.php');
     }
 
     public function edit($id)
