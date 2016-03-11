@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller {
             show_error($this->migration->error_string());
         }
 
-        $this->load->view('admin/dashboard.php');
+        //echo "hi";
+		$this->load->view('admin/dashboard.php');
     }
 }
