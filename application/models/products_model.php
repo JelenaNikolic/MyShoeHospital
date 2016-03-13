@@ -11,7 +11,7 @@ class Products_model extends CI_Model {
     }
 	
 	public function getAll(){
-        return $this->db->get($this->mytable);
+        return $this->db->get($this->mytable)->result();
     }
 	
 	public function insert($data){

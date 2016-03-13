@@ -489,8 +489,8 @@
 					<h4 style="margin-left: 30px;"><b>Lista svih modela cipela</b></h4><br/>
 						<?php
 						
-						foreach($data['shoes'] as $shoes){
-							echo $shoes['product title'];
+						foreach($shoes as $shoe){
+							echo $shoe->product_title;
 						}
 						
 						?>

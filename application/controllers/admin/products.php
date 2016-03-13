@@ -11,6 +11,7 @@ class Products extends CI_Controller {
     public function index()
     {
         $data['shoes'] = $this->products_model->getAll();
+        var_dump($data);
 		$this->load->view('admin/products/list.php', $data);
 		//$this->load->view('admin/products/list.php');
     }
