@@ -490,7 +490,11 @@
 						<?php
 						
 						foreach($shoes as $shoe){
-							echo $shoe->product_title;
+							echo "<h5>Model: ".$shoe->product_title."</h5>";
+							echo "Sifra: ".$shoe->product_code."<br />";
+							echo "Kategorija: ".$shoe->product_category."<br />";
+							echo "Opis: ".$shoe->product_description."<br />";
+							echo "Cena: ".$shoe->product_price."<br />";
 						}
 						
 						?>
