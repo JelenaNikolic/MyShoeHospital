@@ -3,6 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller {
 
+    public function __construct(){
+        parent::__construct();
+        $this->load->model('products_model');
+    }
+
     public function index()
     {
         $this->load->view('admin/products/list.php');
@@ -13,7 +18,8 @@ class Products extends CI_Controller {
 	}
 	
 	public function create(){
-		$this->products_model->insert($this->input->post());
+		if($this->products_model->insert($this->input->post())) redirect(base_url() . 'admin/shoes/add');
+
 	}
 	
 	public function edit($id)

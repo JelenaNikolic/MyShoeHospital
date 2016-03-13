@@ -56,6 +56,7 @@ $route['admin'] = 'admin/dashboard';
 //$route['admin/shoes'] = 'admin/dashboard';
 $route['admin/shoes'] = 'admin/products';
 $route['admin/shoes/add'] = 'admin/products/add';
+$route['admin/shoes/create'] = 'admin/products/create';
 $route['admin/shoes/edit/(:any)'] = 'admin/products/edit/$1';
 
 

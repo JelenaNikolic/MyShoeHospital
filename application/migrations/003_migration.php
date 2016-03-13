@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Products_add_price extends CI_Migration
+class Migration_Migration extends CI_Migration
 {
 
     public function up()
