@@ -10,7 +10,9 @@ class Products extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('admin/products/list.php');
+        $data['shoes'] = $this->products_model->getAll();
+		$this->load->view('admin/products/list.php', $data);
+		//$this->load->view('admin/products/list.php');
     }
 
     public function add(){
@@ -24,7 +26,7 @@ class Products extends CI_Controller {
 	
 	public function edit($id)
     {
-        var_dump($id);
+        //var_dump($id);
         $this->load->view('admin/edit.php');
     }
 }

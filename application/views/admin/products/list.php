@@ -487,6 +487,14 @@
             <div class="body">
                 <div class="form-group">					
 					<h4 style="margin-left: 30px;"><b>Lista svih modela cipela</b></h4><br/>
+						<?php
+						
+						foreach($data['shoes'] as $shoes){
+							echo $shoes['product title'];
+						}
+						
+						?>
+						
 						<h5 style="margin-left: 30px"><b>Muske cipele</b></h5>
 						<div style="margin-left: 30px"><br/>
 							<b>Model 1</b><a href="#" style="float: right; margin-right: 300px;">Edit</a><a href="#"style="float: right; margin-right: 30px;">Delete</a>
