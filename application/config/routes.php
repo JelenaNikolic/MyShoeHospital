@@ -53,7 +53,8 @@ $route['default_controller'] = 'welcome';
 
 
 $route['admin'] = 'admin/dashboard';
-$route['admin/shoes'] = 'admin/dashboard';
+//$route['admin/shoes'] = 'admin/dashboard';
+$route['admin/shoes'] = 'admin/products';
 $route['admin/shoes/edit/(:any)'] = 'admin/products/edit/$1';
 
 
