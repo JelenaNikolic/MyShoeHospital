@@ -36,7 +36,11 @@ class Migration_Add_shops extends CI_Migration
             ),
         ));
 		
-        $this->dbforge->create_table('shops');
+/*<<<<<<< HEAD
+=======
+//		$this->dbforge->drop_table('shops');
+>>>>>>> 947d544fd65143d002b0d4edcd6210a115f99e53
+        $this->dbforge->create_table('shops');*/
     }
 
     public function down()

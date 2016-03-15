@@ -40,6 +40,11 @@ class Products_model extends CI_Model {
         return true;
 	}
 	
+	public function clear()
+	{
+		$this->db->where( '1 = 1' );
+		$this->db->delete($this->mytable);
+	}
 }
 
 ?>
