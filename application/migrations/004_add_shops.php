@@ -36,7 +36,6 @@ class Migration_Add_shops extends CI_Migration
             ),
         ));
 		
-		$this->dbforge->drop_table('shops');
         $this->dbforge->create_table('shops');
     }
 
