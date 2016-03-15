@@ -14,7 +14,8 @@ class Products_model extends CI_Model {
 	{
         return $this->db->get($this->mytable)->result();
     }
-	
+		
+	//vraca array
 	public function get($id)
 	{
 		return $this->db->where('product_id', $id)->get($this->mytable)->result();

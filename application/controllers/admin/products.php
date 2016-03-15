@@ -7,23 +7,38 @@ class Products extends CI_Controller {
         parent::__construct();
         $this->load->model('products_model');
     }
-
+	
+	/**
+	* Loads view list.php where all the products are listed
+	*/
     public function index()
     {
         $data['shoes'] = $this->products_model->getAll();
 		$this->load->view('admin/products/list.php', $data);
     }
 
+	/**
+	* Loads view add.php with the form for adding the product
+	*/
     public function add()
 	{
 		$this->load->view('admin/products/add.php');
 	}
 	
+	/**
+	* 
+	*/
 	public function create()
 	{
 		if($this->products_model->insert($this->input->post())) redirect(base_url() . 'admin/shoes');
 	}
 	
+	/**
+	* Loads view edit.php with the form for editing the specific product
+	* 
+	* @param   int   $id
+	* 
+	*/
 	public function edit($id)
     {
 		$data['shoes'] = $this->products_model->get($id);
@@ -44,6 +59,13 @@ class Products extends CI_Controller {
 
         redirect(base_url() . 'admin/products/index', 'refresh');
 	}
+	
+	/**
+	* Deletes the product with a specific id
+	* 
+	* @param   int   $id
+	* 
+	*/
 	
 	public function delete($id)
 	{
