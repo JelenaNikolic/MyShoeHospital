@@ -43,8 +43,6 @@ class Migration_Migration extends CI_Migration
         $this->dbforge->drop_table('products');
         $this->dbforge->create_table('products');
 
-    }
-
     public function down()
     {
         $this->dbforge->drop_table('products');
