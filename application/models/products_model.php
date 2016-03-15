@@ -12,7 +12,9 @@ class Products_model extends CI_Model {
 	
 	public function getAll()
 	{
-        return $this->db->get($this->mytable)->result();
+		$this->db->select('categories.name as category, products.*');
+		$this->db->join('categories', 'categories.id = products.product_category', 'left');
+		return $this->db->get($this->mytable)->result();
     }
 		
 	//vraca array

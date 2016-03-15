@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller {
 		
 		$this->load->model('products_model');
 
-        $data = [
+       $data = [
             array(
                 'product_title' => 'Model 1',
                 'product_description'  => 'Desription 1',
@@ -79,7 +79,7 @@ class Dashboard extends CI_Controller {
 		foreach($data1 as $shops){
             $this->shops_model->insert($shops);
         }
-		
+
         //echo "hi";
 		$this->load->view('admin/dashboard.php');
     }
