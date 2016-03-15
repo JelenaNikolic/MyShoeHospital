@@ -58,7 +58,16 @@ $route['admin/shoes'] = 'admin/products/index';
 $route['admin/shoes/add'] = 'admin/products/add';
 $route['admin/shoes/create'] = 'admin/products/create';
 $route['admin/shoes/edit/(:any)'] = 'admin/products/edit/$1';
+$route['admin/shoes/delete/(:any)'] = 'admin/products/delete/$1';
+$route['admin/shoes/update'] = 'admin/products/update';
 
+
+$route['admin/shops'] = 'admin/shops/index';
+$route['admin/shops/add'] = 'admin/shops/add';
+$route['admin/shops/create'] = 'admin/shops/create';
+$route['admin/shops/edit/(:any)'] = 'admin/shops/edit/$1';
+$route['admin/shops/delete/(:any)'] = 'admin/shops/delete/$1';
+$route['admin/shops/update'] = 'admin/shops/update';
 
 
 $route['404_override'] = '';

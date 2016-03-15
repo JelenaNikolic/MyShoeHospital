@@ -1,8 +1,8 @@
 <?php
 
-class Products_model extends CI_Model {
+class Shops_model extends CI_Model {
 	
-	protected $mytable = 'products';
+	protected $mytable = 'shops';
 
     function __construct()
     {
@@ -17,12 +17,12 @@ class Products_model extends CI_Model {
 	
 	public function get($id)
 	{
-		return $this->db->where('product_id', $id)->get($this->mytable)->result();
+		return $this->db->where('shop_id', $id)->get($this->mytable)->result();
 	}
 	
 	public function update($id, $data)
 	{
-		$this->db->where('product_id', $id);
+		$this->db->where('shop_id', $id);
         $this->db->update($this->mytable, $data);
         return true;
 	}
@@ -35,7 +35,7 @@ class Products_model extends CI_Model {
 	
 	public function delete($id)
 	{
-		$this->db->where('product_id', $id);
+		$this->db->where('shop_id', $id);
         $this->db->delete($this->mytable);
         return true;
 	}
