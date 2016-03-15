@@ -20,7 +20,7 @@ echo '<!DOCTYPE html>
 										echo "<div style='clear: both;'></div>";
 										echo "<div style='margin-left: 30px;'>";
 										echo "Sifra: ".$shoe->product_code."<br />";
-										echo "Kategorija: ".$shoe->product_category."<br />";
+										echo "Kategorija: ".$shoe->category."<br />";
 										echo "Opis: ".$shoe->product_description."<br />";
 										echo "Cena: ".$shoe->product_price."<br />
 										</div>";

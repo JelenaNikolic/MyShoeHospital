@@ -8,40 +8,41 @@ class Migration_Migration extends CI_Migration
     {
         $this->dbforge->add_field(array(
             'product_id' => array(
-                'type'           => 'INT',
-                'constraint'     => 5,
-                'unsigned'       => TRUE,
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => TRUE,
                 'auto_increment' => TRUE,
                 'unique' => TRUE
             ),
             'product_title' => array(
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
             'product_description' => array(
-                'type'            => 'TEXT',
-                'null'            => TRUE,
+                'type' => 'TEXT',
+                'null' => TRUE,
             ),
             'product_price' => array(
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
             'product_category' => array(
-                'type'       => 'INT',
-                'constraint'     => 1,
+                'type' => 'INT',
+                'constraint' => 1,
             ),
             'product_code' => array(
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
             'product_code2' => array(
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
         ));
 
         $this->dbforge->drop_table('products');
         $this->dbforge->create_table('products');
+    }
 
     public function down()
     {

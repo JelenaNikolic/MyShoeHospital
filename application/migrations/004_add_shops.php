@@ -6,39 +6,39 @@ class Migration_Add_shops extends CI_Migration
 
     public function up()
     {
-		$this->dbforge->add_field(array(
+        $this->dbforge->add_field(array(
             'shop_id' => array(
-                'type'           => 'INT',
-                'constraint'     => 5,
-                'unsigned'       => TRUE,
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => TRUE,
                 'auto_increment' => TRUE,
                 'unique' => TRUE
             ),
             'shop_name' => array(
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
             'city' => array(
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
             'address' => array(
-                'type'       => 'VARCHAR',
-                'constraint'     => '255',
+                'type' => 'VARCHAR',
+                'constraint' => '255',
             ),
             'phone' => array(
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
             'shop_description' => array(
-                'type'            => 'TEXT',
-                'null'            => TRUE,
+                'type' => 'TEXT',
+                'null' => TRUE,
             ),
         ));
 
-		$this->dbforge->drop_table('shops');
+        $this->dbforge->drop_table('shops');
         $this->dbforge->create_table('shops');
-
+    }
 
     public function down()
     {
