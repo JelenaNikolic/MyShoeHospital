@@ -34,12 +34,14 @@ class Migration_Migration extends CI_Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ),
+            'product_code2' => array(
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ),
         ));
 
         $this->dbforge->drop_table('products');
         $this->dbforge->create_table('products');
-
-
 
     }
 

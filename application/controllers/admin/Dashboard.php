@@ -11,22 +11,6 @@ class Dashboard extends CI_Controller {
         }
 
 
-        $data = [
-            array(
-                'title' => 'dadasdas',
-                'desc'  => 'dasdasd'
-            ),
-            array(
-                'title' => 'dadasdas',
-                'desc'  => 'dasdasd'
-            ),.....
-        ]
-
-
-        foreach($data as $d){
-            insert($d)
-        }
-
         //echo "hi";
 		$this->load->view('admin/dashboard.php');
     }
