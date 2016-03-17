@@ -79,6 +79,27 @@ class Dashboard extends CI_Controller {
 		foreach($data1 as $shops){
             $this->shops_model->insert($shops);
         }
+		
+		$this->load->model('categories_model');
+		
+		$category_name = [
+			array(
+				'category_name' => 'muske cipele'
+			),
+			array(
+				'category_name' => 'zenske cipele'
+			),
+			array(
+				'category_name' => 'decije cipele'
+			),
+		];
+		
+		$this->shops_model->clear();
+		
+		foreach ($category_name as $cat){
+			$this->categories_model->insert($category_name);
+		}
+		
 
         //echo "hi";
 		$this->load->view('admin/dashboard.php');
