@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller {
 		
 		$this->load->model('products_model');
 
-       $data = [
+        $data = [
             array(
                 'product_title' => 'Model 1',
                 'product_description'  => 'Desription 1',
@@ -94,10 +94,10 @@ class Dashboard extends CI_Controller {
 			),
 		];
 		
-		$this->shops_model->clear();
+		$this->categories_model->clear();
 		
 		foreach ($category_name as $cat){
-			$this->categories_model->insert($category_name);
+			$this->categories_model->insert($cat);
 		}
 		
 

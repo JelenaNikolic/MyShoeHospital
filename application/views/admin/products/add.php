@@ -21,11 +21,11 @@ echo '<form class="form-horizontal" action="<?=base_url()?>admin/shoes/create" m
 			<label class="control-label col-lg-4" style="margin-bottom: 10px; margin-left: 30px">Kategorija: </label>
 			<div class="col-lg-8" style="margin-bottom: 10px; margin-left: 30px">
 				<select name="product_category" class="form-control">
-					<option selected disabled value="0">Odaberite kategoriju</option>
-					<option value="1">Muske cipele</option>
-					<option value="2">Zenske cipele</option>
-					<option value="3">Decije cipele</option>
-				</select>
+					<option selected disabled value="0">Odaberite kategoriju</option>';
+					foreach ($categories as $cat){
+						echo '<option value="'.$cat->category_id.'">'.$cat->category_name.'</option>';
+					}
+				echo '</select>
 			</div><br />
 			<div style="clear: both"></div>
 			<div class="form-actions no-margin-bottom">

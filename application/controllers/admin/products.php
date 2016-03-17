@@ -9,6 +9,7 @@ class Products extends CI_Controller {
 	public function __construct(){
         parent::__construct();
         $this->load->model('products_model');
+        $this->load->model('categories_model');
     }
 	
 	/**
@@ -27,7 +28,8 @@ class Products extends CI_Controller {
 	*/
     public function add()
 	{
-		$this->load->view('admin/products/add.php');
+		$data['categories'] = $this->categories_model->getAll();
+		$this->load->view('admin/products/add.php', $data);
 	}
 	
 	/**

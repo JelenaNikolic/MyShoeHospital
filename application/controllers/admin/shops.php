@@ -9,6 +9,7 @@ class Shops extends CI_Controller {
 	public function __construct(){
         parent::__construct();
         $this->load->model('shops_model');
+        $this->load->model('products_model');
     }
 
     /**
@@ -46,6 +47,7 @@ class Shops extends CI_Controller {
 	*/
 	public function edit($id)
     {
+		$data['products'] = $this->products_model->getAll();
 		$data['shops'] = $this->shops_model->get($id);
         $this->load->view('admin/shops/edit.php', $data);
     }

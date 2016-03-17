@@ -1,6 +1,6 @@
 <?php
 
- foreach($shops as $shop){
+foreach($shops as $shop){
 echo '<div id="content">
         <div class="outer">
           <div class="inner bg-light lter">
@@ -32,7 +32,15 @@ echo '<div id="content">
 						<label for="text1" class="control-label col-lg-4" style="margin-bottom: 10px; margin-left: 30px">Opis: </label>
 						<div class="col-lg-8" style="margin-bottom: 10px; margin-left: 30px">
                           <input type="text" id="text1" placeholder="Opis" name="shop_description" class="form-control" value="'.$shop->shop_description.'">
-                        </div><br/>
+                        </div>
+						<label for="text1" class="control-label col-lg-4" style="margin-bottom: 10px; margin-left: 30px">Lager: </label>';
+						
+						foreach ( $products as $p ){
+							echo '<div class="col-lg-8" style="margin-bottom: 10px; margin-left: 30px">
+									<input type="checkbox" name="products_models" value="'.$p->product_code.'">'.$p->product_title.'
+							     </div>';
+						}
+						echo '
 						<div style="clear: both"></div>
 						<div class="form-actions no-margin-bottom">
 							<input type="submit" value="Izmeni" class="btn btn-primary" style="float: left; margin-left: 60px">

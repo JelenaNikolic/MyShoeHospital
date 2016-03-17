@@ -14,6 +14,14 @@ class Categories_model extends CI_Model {
     }
 	
 	/**
+	* Pulls out of a database all the categories.
+	*/
+	public function getAll()
+	{
+		return $this->db->get($this->mytable)->result();
+    }
+	
+	/**
 	* Insrets the data into the table categories
 	*
 	*@param   string   $data
