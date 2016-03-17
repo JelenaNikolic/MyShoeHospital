@@ -3,13 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller {
 
-    public function __construct(){
+    /**
+	* Loads products_model
+	*/
+	public function __construct(){
         parent::__construct();
         $this->load->model('products_model');
     }
 	
 	/**
-	* Loads view list.php where all the products are listed
+	* Loads view list.php where all the products (shoe models) are listed
+	*
+	*@return   string   $shoes 
 	*/
     public function index()
     {
@@ -18,7 +23,7 @@ class Products extends CI_Controller {
     }
 
 	/**
-	* Loads view add.php with the form for adding the product
+	* Loads view add.php with the form for adding new product
 	*/
     public function add()
 	{
@@ -26,7 +31,7 @@ class Products extends CI_Controller {
 	}
 	
 	/**
-	* 
+	* Inserts the data into the table products
 	*/
 	public function create()
 	{
@@ -44,6 +49,10 @@ class Products extends CI_Controller {
 		$data['shoes'] = $this->products_model->get($id);
         $this->load->view('admin/products/edit.php', $data);
     }
+	
+	/**
+	* Inserts the data from the form into the table products
+	*/
 	public function update()
 	{
 		$id = $this->input->post('id');

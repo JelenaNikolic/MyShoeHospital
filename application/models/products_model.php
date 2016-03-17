@@ -4,12 +4,19 @@ class Products_model extends CI_Model {
 	
 	protected $mytable = 'products';
 
-    function __construct()
+    /**
+	* Loads the database
+	*/
+	function __construct()
     {
         parent::__construct();
         $this->load->database();
     }
 	
+	/**
+	* Pulls out of a database all the products with their categories.
+	* Informations are pulled from table products left joind with table categories
+	*/
 	public function getAll()
 	{
 		$this->db->select('categories.name as category, products.*');
@@ -17,12 +24,22 @@ class Products_model extends CI_Model {
 		return $this->db->get($this->mytable)->result();
     }
 		
-	//vraca array
+	/**
+	* Gets the specific product from the table products(model of shoes with specific id)
+	*
+	*@param   int   $id
+	*/
 	public function get($id)
 	{
 		return $this->db->where('product_id', $id)->get($this->mytable)->result();
 	}
 	
+	/**
+	* Insrets the data into the table products for a specific product
+	*
+	*@param   int      $id
+	*@param   string   $data
+	*/
 	public function update($id, $data)
 	{
 		$this->db->where('product_id', $id);
@@ -30,12 +47,22 @@ class Products_model extends CI_Model {
         return true;
 	}
 	
+	/**
+	* Insrets the data into the table products
+	*
+	*@param   string   $data
+	*/
 	public function insert($data)
 	{
         $this->db->insert($this->mytable, $data);
         return true;
     }
 	
+	/**
+	* Delets specific product from the table products
+	*
+	*@param   int      $id
+	*/
 	public function delete($id)
 	{
 		$this->db->where('product_id', $id);
@@ -43,6 +70,11 @@ class Products_model extends CI_Model {
         return true;
 	}
 	
+	/**
+	*
+	* Delets all the products from the table products
+	*
+	*/
 	public function clear()
 	{
 		$this->db->where( '1 = 1' );
