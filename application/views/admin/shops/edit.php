@@ -37,7 +37,7 @@ echo '<div id="content">
 						
 						foreach ( $products as $p ){
 							echo '<div class="col-lg-8" style="margin-bottom: 10px; margin-left: 30px">
-									<input type="checkbox" name="products_models" value="'.$p->product_code.'">'.$p->product_title.'
+									<input type="checkbox" name="products_models[]" value="'.$p->product_code.'"'; if(in_array($p->product_code, $products_shops))echo ' checked '; echo'>'.$p->product_title.'
 							     </div>';
 						}
 						echo '

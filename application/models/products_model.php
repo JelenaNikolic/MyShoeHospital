@@ -19,8 +19,8 @@ class Products_model extends CI_Model {
 	*/
 	public function getAll()
 	{
-		//$this->db->select('categories.name as category, products.*');
-		//$this->db->join('categories', 'categories.id = products.product_category', 'left');
+		$this->db->select('categories.category_name as category, products.*');
+		$this->db->join('categories', 'categories.category_id = products.product_category', 'left');
 		return $this->db->get($this->mytable)->result();
     }
 		

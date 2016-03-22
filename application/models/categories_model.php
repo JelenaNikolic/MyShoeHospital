@@ -24,7 +24,7 @@ class Categories_model extends CI_Model {
 	/**
 	* Insrets the data into the table categories
 	*
-	*@param   string   $data
+	*@param   string   $data ($data has just the name of the category)
 	*/
 	public function insert($data)
 	{

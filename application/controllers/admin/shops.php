@@ -10,6 +10,7 @@ class Shops extends CI_Controller {
         parent::__construct();
         $this->load->model('shops_model');
         $this->load->model('products_model');
+        $this->load->model('products_shops_model');
     }
 
     /**
@@ -47,6 +48,7 @@ class Shops extends CI_Controller {
 	*/
 	public function edit($id)
     {
+		$data['products_shops'] = $this->products_shops_model->get($id);
 		$data['products'] = $this->products_model->getAll();
 		$data['shops'] = $this->shops_model->get($id);
         $this->load->view('admin/shops/edit.php', $data);
@@ -58,6 +60,17 @@ class Shops extends CI_Controller {
 	public function update()
 	{
 		$id = $this->input->post('id');
+		$products_models = $this->input->post('products_models');
+		
+		$this->products_shops_model->delete($id);
+		
+		foreach($products_models as $models){
+			$data = array(
+				'product_id' => $models,
+				'shop_ID' => $id
+			);
+			$this->products_shops_model->insert($data);
+		}
 
         $data = array(
             "shop_name" => $this->input->post('shop_name'),

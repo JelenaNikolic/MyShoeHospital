@@ -84,13 +84,13 @@ class Dashboard extends CI_Controller {
 		
 		$category_name = [
 			array(
-				'category_name' => 'muske cipele'
+				'category_name' => 'Muske cipele'
 			),
 			array(
-				'category_name' => 'zenske cipele'
+				'category_name' => 'Zenske cipele'
 			),
 			array(
-				'category_name' => 'decije cipele'
+				'category_name' => 'Decije cipele'
 			),
 		];
 		
