@@ -41,7 +41,7 @@ class Migration_Deleted_product extends CI_Migration
             ),
         ));
 
-        //$this->dbforge->drop_table('products');
+        $this->dbforge->drop_table('products');
         $this->dbforge->create_table('products');
     }
 

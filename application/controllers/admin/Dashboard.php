@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller {
 	
 	public function index()
     {
-        $this->load->library('migration');
+        /*$this->load->library('migration');
         if (!$this->migration->current()){
             show_error($this->migration->error_string());
         }
@@ -98,7 +98,7 @@ class Dashboard extends CI_Controller {
 		
 		foreach ($category_name as $cat){
 			$this->categories_model->insert($cat);
-		}
+		}*/
 		
 
         //echo "hi";

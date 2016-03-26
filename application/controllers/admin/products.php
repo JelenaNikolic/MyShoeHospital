@@ -10,6 +10,7 @@ class Products extends CI_Controller {
         parent::__construct();
         $this->load->model('products_model');
         $this->load->model('categories_model');
+		$this->load->library('form_validation');
     }
 	
 	/**
@@ -37,7 +38,17 @@ class Products extends CI_Controller {
 	*/
 	public function create()
 	{
-		if($this->products_model->insert($this->input->post())) redirect(base_url() . 'admin/shoes');
+		$this->form_validation->set_rules('product_code', 'Sifra modela', 'required');//name u html-u, drugi ime za gresku, trece da mora da se unese
+		$this->form_validation->set_rules('product_title', 'Naziv modela', 'required');
+		$this->form_validation->set_rules('product_descriptio', 'Opis', 'required');
+		$this->form_validation->set_rules('product_price', 'Cena', 'required');
+		$this->form_validation->set_rules('product_category', 'Kategorija', 'required');
+		if($this->form_validation->run() == FALSE){
+			$data['categories'] = $this->categories_model->getAll();
+			$this->load->view('admin/products/add.php', $data);
+		}else{
+			if($this->products_model->insert($this->input->post())) redirect(base_url() . 'admin/shoes');
+		}	
 	}
 	
 	/**

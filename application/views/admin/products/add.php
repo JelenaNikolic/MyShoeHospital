@@ -1,4 +1,5 @@
 <?php
+echo validation_errors();
 echo '<form class="form-horizontal" action="<?=base_url()?>admin/shoes/create" method="post">
 		<div class="form-group">
 			<h3 style="margin-left: 30px"><b>Unos novog modela cipela</b></h3>

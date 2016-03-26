@@ -25,7 +25,6 @@ echo '<!DOCTYPE html>
 										echo "Cena: ".$shoe->product_price."<br />
 										</div>";
 									}
-									
 							
 						echo '</div>
 						</div>
