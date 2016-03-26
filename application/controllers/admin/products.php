@@ -30,7 +30,7 @@ class Products extends CI_Controller {
     public function add()
 	{
 		$data['categories'] = $this->categories_model->getAll();
-		$this->load->view('admin/products/add.php', $data);
+		$this->load->view('admin/products/add', $data);
 	}
 	
 	/**
@@ -43,6 +43,7 @@ class Products extends CI_Controller {
 		$this->form_validation->set_rules('product_descriptio', 'Opis', 'required');
 		$this->form_validation->set_rules('product_price', 'Cena', 'required');
 		$this->form_validation->set_rules('product_category', 'Kategorija', 'required');
+
 		if($this->form_validation->run() == FALSE){
 			$data['categories'] = $this->categories_model->getAll();
 			$this->load->view('admin/products/add.php', $data);

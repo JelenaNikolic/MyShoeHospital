@@ -1,6 +1,7 @@
 <?php
 echo validation_errors();
-echo '<form class="form-horizontal" action="<?=base_url()?>admin/shoes/create" method="post">
+?>
+     <form class="form-horizontal" action="<?= base_url() ?>admin/shoes/create" method="post">
 		<div class="form-group">
 			<h3 style="margin-left: 30px"><b>Unos novog modela cipela</b></h3>
 			<label for="text1" class="control-label col-lg-4" style="margin-bottom: 10px; margin-left: 30px">Sifra modela: </label>
@@ -34,4 +35,3 @@ echo '<form class="form-horizontal" action="<?=base_url()?>admin/shoes/create" m
 			</div>
 		</div>
 	</form>';
-?>
